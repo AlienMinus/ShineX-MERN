@@ -18,7 +18,7 @@ import recoRoutes from "./src/routes/reco.routes.js";
 dotenv.config();
 const app = express();
 
-app.use(cors({ origin: "https://shopx-online.vercel.app/"], credentials: true }));
+app.use(cors({ origin: "https://shopx-online.vercel.app/", credentials: true }));
 app.use(express.json());
 app.use(cookieParser());
 
