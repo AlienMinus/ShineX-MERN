@@ -10,13 +10,13 @@ export default function Home(){
   useEffect(()=>{ fetchProducts(); }, []);
 
   async function fetchProducts(params = {}) {
-    const res = await axios.get(`${process.env.VITE_API_URL}/api/products`, { params });
+    const res = await axios.get(`https://shinex-dptg.onrender.com//api/products`, { params });
     setProducts(res.data.items || []);
   }
 
   const onSearch = async (e) => {
     e.preventDefault();
-    await axios.post(`${process.env.VITE_API_URL}/api/history/search`, { query: q }, { headers: authHeader() }).catch(()=>{});
+    await axios.post(`https://shinex-dptg.onrender.com//api/history/search`, { query: q }, { headers: authHeader() }).catch(()=>{});
     fetchProducts({ q });
   };
 

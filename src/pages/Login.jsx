@@ -7,13 +7,13 @@ export default function Login(){
 
   async function login(e) {
     e.preventDefault();
-    const res = await axios.post(`${process.env.VITE_API_URL}/api/auth/login`, { email, password });
+    const res = await axios.post(`https://shinex-dptg.onrender.com/api/auth/login`, { email, password });
     localStorage.setItem('token', res.data.token);
     window.location.href = '/';
   }
 
   function googleLogin() {
-    window.location.href = `${process.env.VITE_API_URL}/api/auth/google`;
+    window.location.href = `https://shinex-dptg.onrender.com/api/auth/google`;
   }
 
   return (

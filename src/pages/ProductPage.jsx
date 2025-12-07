@@ -8,12 +8,12 @@ export default function ProductPage(){
 
   useEffect(()=> {
     async function load(){
-      const res = await axios.get(`https://shinex-dptg.onrender.com/api/api/products/${id}`);
+      const res = await axios.get(`https://shinex-dptg.onrender.com/api/products/${id}`);
       setProduct(res.data);
       // record view (if logged in)
       const token = localStorage.getItem('token');
       if (token) {
-        axios.post(`https://shinex-dptg.onrender.com/api/api/history/view`, { productId: id }, { headers: { Authorization: `Bearer ${token}` } }).catch(()=>{});
+        axios.post(`https://shinex-dptg.onrender.com/api/history/view`, { productId: id }, { headers: { Authorization: `Bearer ${token}` } }).catch(()=>{});
       }
     }
     load();

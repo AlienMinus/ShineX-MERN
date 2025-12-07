@@ -16,7 +16,7 @@ export default function AdminDashboard() {
 
   async function loadStats() {
     try {
-      const res = await axios.get(`${process.env.VITE_API_URL}/api/admin/stats`, { headers: authHeader() });
+      const res = await axios.get(`https://shinex-dptg.onrender.com/api/admin/stats`, { headers: authHeader() });
       setStats(res.data);
     } catch (err) {
       console.error(err);
